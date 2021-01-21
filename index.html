@@ -145,7 +145,6 @@
      }
   </style>
     <a-scene
-        vidhandler
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
@@ -168,7 +167,7 @@
             >
         </a-video>
         <a-plane src="#skillzy_girl" height="1" width="1" position="0 3 0" rotation="90 0 0"></a-plane>
-		    <a-marker-camera preset='hiro'></a-marker-camera>
+		    <a-marker-camera vidhandler preset='hiro'></a-marker-camera>
 
 
 	</a-scene>
