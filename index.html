@@ -21,6 +21,32 @@
             }
         });
     };
+    AFRAME.registerComponent('vidhandler', {
+        init: function() {
+            this.toggle = false;
+            this.vid = document.querySelector("#vid");
+            this.vid.pause();
+        },
+        tick: function() {
+            if (this.el.object3D.visible == true) {
+                if (!this.toggle) {
+                    this.toggle = true;
+                    this.vid.play();
+                }
+            } else {
+                this.toggle = false;
+                this.vid.pause();
+            }
+        }
+    });
+
+    function refrespage() {
+        location.reload();
+    }
+
+    function playvid() {
+        vid.play();
+    }
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
@@ -28,6 +54,7 @@
         <div>Loading, please wait...</div>
     </div>
     <a-scene
+    videohandler
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
